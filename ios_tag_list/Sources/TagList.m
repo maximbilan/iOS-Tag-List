@@ -1,6 +1,6 @@
 //
 //  TagList.m
-//  wymg
+//  ios_tag_list
 //
 //  Created by Maxim on 9/23/13.
 //  Copyright (c) 2013 Maxim. All rights reserved.
@@ -10,7 +10,11 @@
 #import "TagView.h"
 #import "UIColor+TagColors.h"
 
-#import "../../Common/Defines.h"
+#define TAG_LIST_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING(code)           \
+_Pragma("clang diagnostic push")                                        \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"")     \
+code;                                                                   \
+_Pragma("clang diagnostic pop")                                         \
 
 static const CGFloat TagListElementWidth			= 88;
 static const CGFloat TagListElementHeight			= 30;
@@ -166,7 +170,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
  	
 	if( tagView && self.tagDelegate && [self.tagDelegate respondsToSelector:touchTagSelector] )
 	{
-		SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING( [self.tagDelegate performSelector:touchTagSelector withObject:tagView.text]; )
+		TAG_LIST_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING( [self.tagDelegate performSelector:touchTagSelector withObject:tagView.text]; )
 	}
 }
 
@@ -174,7 +178,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 {
 	if( self.tagDelegate && [self.tagDelegate respondsToSelector:touchBackgroundSelector] )
 	{
-		SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING( [self.tagDelegate performSelector:touchBackgroundSelector]; )
+		TAG_LIST_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING( [self.tagDelegate performSelector:touchBackgroundSelector]; )
 	}
 }
 

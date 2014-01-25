@@ -1,6 +1,6 @@
 //
 //  TagList.h
-//  wymg
+//  ios_tag_list
 //
 //  Created by Maxim on 9/23/13.
 //  Copyright (c) 2013 Maxim. All rights reserved.
@@ -11,8 +11,8 @@
 @interface TagList : UIScrollView
 {
 	NSMutableArray *tags;
-	CGFloat			posX;
-	CGFloat			posY;
+	CGFloat posX;
+	CGFloat	posY;
 	
 	SEL touchTagSelector;
 	SEL touchBackgroundSelector;
