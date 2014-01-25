@@ -38,11 +38,11 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if( self )
-	{
+    if (self) {
 		posX = frame.origin.x;
 		posY = frame.origin.y;
     }
+    
     return self;
 }
 
@@ -56,14 +56,14 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 
 - (id)init
 {
-	self = [self initWithFrame:CGRectMake( 0, 0, 0, 0 )];
+	self = [self initWithFrame:CGRectMake(0, 0, 0, 0)];
 	
 	return self;
 }
 
-- (id)init:(CGFloat)x posY:(CGFloat)y
+- (id)initWithX:(CGFloat)x withY:(CGFloat)y
 {
-	self = [self initWithFrame:CGRectMake( x, y, 0, 0 )];
+	self = [self initWithFrame:CGRectMake(x, y, 0, 0)];
 
 	return self;
 }
@@ -84,17 +84,16 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 
 - (void)createTags:(NSArray *)texts
 {
-	for( TagView *tv in tags )
-	{
+	for (TagView *tv in tags) {
 		[tv removeFromSuperview];
 	}
 	[tags removeAllObjects];
 	
-	NSInteger rowCount = ceil( texts.count / (float)TagListMaxTagsInRow );
-	CGFloat width = texts.count * TagListElementWidth + ( texts.count - 1 ) * TagListElementSpacingX;
-	CGFloat height = rowCount * TagListElementHeight + ( rowCount - 1 ) * TagListElementSpacingY;
+	NSInteger rowCount = ceil(texts.count / (float)TagListMaxTagsInRow);
+	CGFloat width = texts.count * TagListElementWidth + (texts.count - 1) * TagListElementSpacingX;
+	CGFloat height = rowCount * TagListElementHeight + (rowCount - 1) * TagListElementSpacingY;
 	
-	self.frame = CGRectMake( posX, posY, width, height );
+	self.frame = CGRectMake(posX, posY, width, height);
 	
 	CGFloat x = 0;
 	CGFloat y = 0;
@@ -102,9 +101,8 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 	NSInteger index = 0;
 	NSInteger rowIndex = 0;
 	
-	for( NSString *str in texts )
-	{
-		TagView* tagView = [[TagView alloc] initWithFrame:CGRectMake( x, y, TagListElementWidth, TagListElementHeight ) ];
+	for (NSString *str in texts) {
+		TagView* tagView = [[TagView alloc] initWithFrame:CGRectMake(x, y, TagListElementWidth, TagListElementHeight)];
 		[tagView setText:str];
 		[self addSubview:tagView];
 		[tags addObject:tagView];
@@ -113,8 +111,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
         [tagView setUserInteractionEnabled:YES];
         [tagView addGestureRecognizer:gesture];
 	
-		switch( index )
-		{
+		switch (index) {
 			case 0:
 			case 1:
             case 2:
@@ -144,8 +141,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 		++index;
 		++rowIndex;
 		x += TagListElementWidth + TagListElementSpacingX;
-		if( rowIndex == TagListMaxTagsInRow )
-		{
+		if (rowIndex == TagListMaxTagsInRow) {
 			x = 0;
 			rowIndex = 0;
 			y += TagListElementHeight + TagListElementSpacingY;
@@ -168,17 +164,15 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 	UITapGestureRecognizer *t = (UITapGestureRecognizer *)sender;
     TagView *tagView = (TagView *)t.view;
  	
-	if( tagView && self.tagDelegate && [self.tagDelegate respondsToSelector:touchTagSelector] )
-	{
-		TAG_LIST_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING( [self.tagDelegate performSelector:touchTagSelector withObject:tagView.text]; )
+	if(tagView && self.tagDelegate && [self.tagDelegate respondsToSelector:touchTagSelector]) {
+		TAG_LIST_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING([self.tagDelegate performSelector:touchTagSelector withObject:tagView.text];)
 	}
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	if( self.tagDelegate && [self.tagDelegate respondsToSelector:touchBackgroundSelector] )
-	{
-		TAG_LIST_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING( [self.tagDelegate performSelector:touchBackgroundSelector]; )
+	if (self.tagDelegate && [self.tagDelegate respondsToSelector:touchBackgroundSelector]) {
+		TAG_LIST_SUPPRESS_PERFORM_SELECTOR_LEAK_WARNING([self.tagDelegate performSelector:touchBackgroundSelector];)
 	}
 }
 

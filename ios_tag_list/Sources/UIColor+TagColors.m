@@ -1,6 +1,6 @@
 //
 //  UIColor+TagColors.m
-//  wymg
+//  ios_tag_list
 //
 //  Created by Maxim on 9/22/13.
 //  Copyright (c) 2013 Maxim. All rights reserved.
