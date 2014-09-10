@@ -36,8 +36,3 @@ TouchTagSelector - handle tap on tag event<br>
 TouchBackgroundSelector - handle touches out of the tags event
 
 More details you can found in the project sample.
-
-Apps using tag list
-============
-
-<a href="https://itunes.apple.com/us/app/wymg/id769463031">Wymg</a> - Where your money goes? Want to know? Easiest way to track your expenses, use wymg. Designed with simplicity and usability. With just a few taps you can track your expense or check purchases.
