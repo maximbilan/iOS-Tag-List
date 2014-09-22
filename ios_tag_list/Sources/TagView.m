@@ -26,7 +26,7 @@ static const    CGFloat             TagViewCornerHeight     = 5.0;
 @synthesize fontColor = _fontColor;
 @synthesize text = _text;
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {

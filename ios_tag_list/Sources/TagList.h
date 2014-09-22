@@ -18,7 +18,7 @@
 	SEL touchBackgroundSelector;
 }
 
-- (id)initWithX:(CGFloat)x withY:(CGFloat)y;
+- (instancetype)initWithX:(CGFloat)x withY:(CGFloat)y;
 - (void)setPosX:(CGFloat)x andY:(CGFloat)y;
 - (void)createTags:(NSArray *)texts;
 - (void)setTouchTagSelector:(SEL)selector;

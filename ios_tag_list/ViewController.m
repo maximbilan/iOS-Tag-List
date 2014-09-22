@@ -31,7 +31,7 @@
     UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchView:)];
 	[self.view addGestureRecognizer:gesture];
     
-    NSArray *array = [NSArray arrayWithObjects:@"tag 1", @"tag 2", @"tag 3", @"tag 4", @"tag 5", @"tag 6", @"tag 7", @"tag 8", @"tag 9", @"tag 10", @"tag 11", nil];
+    NSArray *array = @[@"tag 1", @"tag 2", @"tag 3", @"tag 4", @"tag 5", @"tag 6", @"tag 7", @"tag 8", @"tag 9", @"tag 10", @"tag 11"];
     
     [self.tagList createTags:array];
     [self.tagList setTagDelegate:self];

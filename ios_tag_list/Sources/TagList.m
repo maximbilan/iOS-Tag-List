@@ -35,7 +35,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 
 @synthesize tagDelegate = _tagDelegate;
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -54,14 +54,14 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
     posY = self.frame.origin.y;
 }
 
-- (id)init
+- (instancetype)init
 {
 	self = [self initWithFrame:CGRectMake(0, 0, 0, 0)];
 	
 	return self;
 }
 
-- (id)initWithX:(CGFloat)x withY:(CGFloat)y
+- (instancetype)initWithX:(CGFloat)x withY:(CGFloat)y
 {
 	self = [self initWithFrame:CGRectMake(x, y, 0, 0)];
 
