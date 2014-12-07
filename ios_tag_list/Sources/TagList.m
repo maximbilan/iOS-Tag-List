@@ -26,6 +26,14 @@ static const NSInteger TagListMaxTagsInRow			= 3;
 static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 
 @interface TagList ()
+{
+    NSMutableArray *tags;
+    CGFloat posX;
+    CGFloat	posY;
+    
+    SEL touchTagSelector;
+    SEL touchBackgroundSelector;
+}
 
 - (void)touchTag:(id)sender;
 
@@ -41,6 +49,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
     if (self) {
 		posX = frame.origin.x;
 		posY = frame.origin.y;
+        self.maxTagsInRow = TagListMaxTagsInRow;
     }
     
     return self;
@@ -52,6 +61,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
     
     posX = self.frame.origin.x;
     posY = self.frame.origin.y;
+    self.maxTagsInRow = TagListMaxTagsInRow;
 }
 
 - (instancetype)init
@@ -74,6 +84,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
     
     posX = self.frame.origin.x;
     posY = self.frame.origin.y;
+    self.maxTagsInRow = TagListMaxTagsInRow;
 }
 
 - (void)setPosX:(CGFloat)x andY:(CGFloat)y
@@ -89,7 +100,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 	}
 	[tags removeAllObjects];
 	
-	NSInteger rowCount = ceil(texts.count / (float)TagListMaxTagsInRow);
+	NSInteger rowCount = ceil(texts.count / (float)self.maxTagsInRow);
 	CGFloat width = texts.count * TagListElementWidth + (texts.count - 1) * TagListElementSpacingX;
 	CGFloat height = rowCount * TagListElementHeight + (rowCount - 1) * TagListElementSpacingY;
 	
@@ -141,7 +152,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 		++index;
 		++rowIndex;
 		x += TagListElementWidth + TagListElementSpacingX;
-		if (rowIndex == TagListMaxTagsInRow) {
+		if (rowIndex == self.maxTagsInRow) {
 			x = 0;
 			rowIndex = 0;
 			y += TagListElementHeight + TagListElementSpacingY;

@@ -15,9 +15,6 @@ typedef NS_ENUM(NSInteger, TagViewState)
 };
 
 @interface TagView : UIView
-{
-	NSInteger state;
-}
 
 @property (nonatomic, strong) UIColor *color;
 @property (nonatomic, strong) UIColor *colorHightlighted;

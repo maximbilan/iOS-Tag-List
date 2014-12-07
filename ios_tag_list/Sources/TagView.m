@@ -19,6 +19,13 @@ static const	int					TagViewMaxCharacter		= 10;
 static const    CGFloat             TagViewCornerWidth      = 5.0;
 static const    CGFloat             TagViewCornerHeight     = 5.0;
 
+@interface TagView ()
+{
+    NSInteger state;
+}
+
+@end
+
 @implementation TagView
 
 @synthesize color = _color;

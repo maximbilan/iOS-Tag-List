@@ -9,14 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TagList : UIScrollView
-{
-	NSMutableArray *tags;
-	CGFloat posX;
-	CGFloat	posY;
-	
-	SEL touchTagSelector;
-	SEL touchBackgroundSelector;
-}
 
 - (instancetype)initWithX:(CGFloat)x withY:(CGFloat)y;
 - (void)setPosX:(CGFloat)x andY:(CGFloat)y;
@@ -25,5 +17,7 @@
 - (void)setTouchBackgroundSelector:(SEL)selector;
 
 @property (nonatomic, weak) id tagDelegate;
+
+@property (nonatomic) NSInteger maxTagsInRow;
 
 @end
