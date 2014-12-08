@@ -27,7 +27,6 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 
 @interface TagList ()
 {
-    NSMutableArray *tags;
     CGFloat posX;
     CGFloat	posY;
     
@@ -102,11 +101,10 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 
 - (void)createTags:(NSArray *)texts
 {
-	for (TagView *tv in tags) {
-		[tv removeFromSuperview];
-	}
-	[tags removeAllObjects];
-	
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
+    
 	NSInteger rowCount = ceil(texts.count / (float)self.maxTagsInRow);
 	CGFloat width = texts.count * self.elementWidth + (texts.count - 1) * self.elementSpacingX;
 	CGFloat height = rowCount * self.elementHeight + (rowCount - 1) * self.elementSpacingY;
@@ -123,7 +121,6 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 		TagView* tagView = [[TagView alloc] initWithFrame:CGRectMake(x, y, self.elementWidth, self.elementHeight)];
 		[tagView setText:str];
 		[self addSubview:tagView];
-		[tags addObject:tagView];
 		
 		UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchTag:)];
         [tagView setUserInteractionEnabled:YES];
