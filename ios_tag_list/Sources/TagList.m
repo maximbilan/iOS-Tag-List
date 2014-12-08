@@ -50,6 +50,10 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 		posX = frame.origin.x;
 		posY = frame.origin.y;
         self.maxTagsInRow = TagListMaxTagsInRow;
+        self.elementWidth = TagListElementWidth;
+        self.elementHeight = TagListElementHeight;
+        self.elementSpacingX = TagListElementSpacingX;
+        self.elementSpacingY = TagListElementSpacingY;
     }
     
     return self;
@@ -84,6 +88,10 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
     posX = self.frame.origin.x;
     posY = self.frame.origin.y;
     self.maxTagsInRow = TagListMaxTagsInRow;
+    self.elementWidth = TagListElementWidth;
+    self.elementHeight = TagListElementHeight;
+    self.elementSpacingX = TagListElementSpacingX;
+    self.elementSpacingY = TagListElementSpacingY;
 }
 
 - (void)setPosX:(CGFloat)x andY:(CGFloat)y
@@ -100,8 +108,8 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 	[tags removeAllObjects];
 	
 	NSInteger rowCount = ceil(texts.count / (float)self.maxTagsInRow);
-	CGFloat width = texts.count * TagListElementWidth + (texts.count - 1) * TagListElementSpacingX;
-	CGFloat height = rowCount * TagListElementHeight + (rowCount - 1) * TagListElementSpacingY;
+	CGFloat width = texts.count * self.elementWidth + (texts.count - 1) * self.elementSpacingX;
+	CGFloat height = rowCount * self.elementHeight + (rowCount - 1) * self.elementSpacingY;
 	
 	self.frame = CGRectMake(posX, posY, width, height);
 	
@@ -112,7 +120,7 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 	NSInteger rowIndex = 0;
 	
 	for (NSString *str in texts) {
-		TagView* tagView = [[TagView alloc] initWithFrame:CGRectMake(x, y, TagListElementWidth, TagListElementHeight)];
+		TagView* tagView = [[TagView alloc] initWithFrame:CGRectMake(x, y, self.elementWidth, self.elementHeight)];
 		[tagView setText:str];
 		[self addSubview:tagView];
 		[tags addObject:tagView];
@@ -150,11 +158,11 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 		
 		++index;
 		++rowIndex;
-		x += TagListElementWidth + TagListElementSpacingX;
+		x += self.elementWidth + self.elementSpacingX;
 		if (rowIndex == self.maxTagsInRow) {
 			x = 0;
 			rowIndex = 0;
-			y += TagListElementHeight + TagListElementSpacingY;
+			y += self.elementHeight + self.elementSpacingY;
 		}
 	}
 }

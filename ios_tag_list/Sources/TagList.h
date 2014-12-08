@@ -20,4 +20,9 @@
 
 @property (nonatomic) NSInteger maxTagsInRow;
 
+@property (nonatomic) CGFloat elementWidth;
+@property (nonatomic) CGFloat elementHeight;
+@property (nonatomic) CGFloat elementSpacingX;
+@property (nonatomic) CGFloat elementSpacingY;
+
 @end
