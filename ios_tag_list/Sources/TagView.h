@@ -21,4 +21,8 @@ typedef NS_ENUM(NSInteger, TagViewState)
 @property (nonatomic, strong) UIColor *fontColor;
 @property (nonatomic, strong) NSString *text;
 
+@property (nonatomic, strong) NSString *fontName;
+@property (nonatomic) CGFloat fontSize;
+@property (nonatomic) CGFloat fontSizeMin;
+
 @end

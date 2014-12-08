@@ -43,6 +43,10 @@ static const    CGFloat             TagViewCornerHeight     = 5.0;
 		self.colorHightlighted = [UIColor yellowTagColor:TagViewHighlightAlpha];
 		self.fontColor = [UIColor colorWithRed:0.298 green:0.337 blue:0.424 alpha:1.000];
 		self.text = @"Default";
+        
+        self.fontName = TagViewFontFamily;
+        self.fontSize = TagViewFontSize;
+        self.fontSizeMin = TagViewFontSizeMin;
     }
     
     return self;
@@ -78,7 +82,7 @@ static const    CGFloat             TagViewCornerHeight     = 5.0;
     CGContextAddPath(context, roundedRectPath);
     CGContextFillPath(context);
     
-	CTFontRef font = CTFontCreateWithName((CFStringRef)TagViewFontFamily, (reduce ? TagViewFontSizeMin : TagViewFontSize), NULL);
+	CTFontRef font = CTFontCreateWithName((CFStringRef)self.fontName, (reduce ? self.fontSizeMin : self.fontSize), NULL);
 	CGColorRef fontColorRef = self.fontColor.CGColor;
 	
 	NSString *finalText = (!reduce ? self.text : [NSString stringWithFormat:@"%@...", [self.text substringToIndex:TagViewMaxCharacter]]);

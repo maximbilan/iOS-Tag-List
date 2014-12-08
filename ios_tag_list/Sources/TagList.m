@@ -122,6 +122,10 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
 		[tagView setText:str];
 		[self addSubview:tagView];
 		
+        tagView.fontName = self.fontName;
+        tagView.fontSize = self.fontSize;
+        tagView.fontSizeMin = self.fontSizeMin;
+        
 		UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchTag:)];
         [tagView setUserInteractionEnabled:YES];
         [tagView addGestureRecognizer:gesture];

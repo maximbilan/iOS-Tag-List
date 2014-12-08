@@ -25,4 +25,8 @@
 @property (nonatomic) CGFloat elementSpacingX;
 @property (nonatomic) CGFloat elementSpacingY;
 
+@property (nonatomic, strong) NSString *fontName;
+@property (nonatomic) CGFloat fontSize;
+@property (nonatomic) CGFloat fontSizeMin;
+
 @end
