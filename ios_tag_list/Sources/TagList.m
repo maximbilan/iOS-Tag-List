@@ -61,7 +61,6 @@ static const CGFloat TagListDefaultHighlightAlpha	= 0.7f;
     
     posX = self.frame.origin.x;
     posY = self.frame.origin.y;
-    self.maxTagsInRow = TagListMaxTagsInRow;
 }
 
 - (instancetype)init
