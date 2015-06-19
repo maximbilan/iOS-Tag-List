@@ -1,8 +1,7 @@
 iOS Tag List
 ============
 
-iOS tag list. There're samples for iphone and ipad.<br>
-<br>
+iOS tag list. There're samples for iPhone and iPad.<br>
 ![alt tag](https://raw.github.com/maximbilan/ios_tag_list/master/img/img1.png)
 ## How to use:
 <br>
