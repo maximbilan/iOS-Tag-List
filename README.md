@@ -4,7 +4,7 @@ iOS Tag List
 iOS tag list. There're samples for iphone and ipad.<br>
 <br>
 ![alt tag](https://raw.github.com/maximbilan/ios_tag_list/master/img/img1.png)
-<b>How to use:</b>
+## How to use:
 <br>
 Add to your project source files: <br>
 <pre>
