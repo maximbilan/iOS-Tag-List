@@ -15,7 +15,7 @@ static const	CGFloat				TagViewHighlightAlpha	= 0.5;
 static			NSString * const	TagViewFontFamily		= @"HelveticaNeue-Light";
 static const	CGFloat				TagViewFontSize			= 12.0;
 static const	CGFloat				TagViewFontSizeMin		= 10.0;
-static const	int					TagViewMaxCharacter		= 10;
+static const	NSInteger			TagViewMaxCharacter		= 10;
 static const    CGFloat             TagViewCornerWidth      = 5.0;
 static const    CGFloat             TagViewCornerHeight     = 5.0;
 
@@ -109,9 +109,9 @@ static const    CGFloat             TagViewCornerHeight     = 5.0;
 	
 	CGRect boundingBox = CTFontGetBoundingBox(font);
 	
-	const float midHeight = rect.size.height * 0.5f;
-	const float midFontBBHeight = boundingBox.size.height * 0.5f;
-	const float height = midHeight + midFontBBHeight;
+	const CGFloat midHeight = rect.size.height * 0.5;
+	const CGFloat midFontBBHeight = boundingBox.size.height * 0.5;
+	const CGFloat height = midHeight + midFontBBHeight;
 	
 	CGMutablePathRef path = CGPathCreateMutable();
 	CGPathAddRect(path, NULL, CGRectMake(0, 0, rect.size.width, height));
