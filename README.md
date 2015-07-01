@@ -1,10 +1,10 @@
 iOS Tag List
 ============
 
-iOS tag list. There're samples for iPhone and iPad.<br><br>
+Simple control for iOS, list of tags.<br><br>
 ![alt tag](https://raw.github.com/maximbilan/ios_tag_list/master/img/img1.png)
 ## How to use:
-Add to your project source files: <br>
+Add to your project the next source files: <br>
 <pre>
 TagList.h
 TagList.m
