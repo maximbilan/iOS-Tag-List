@@ -1,13 +1,10 @@
 iOS Tag List
 ============
 
-<br>
-iOS tag list. There're samples for iphone and ipad.<br>
-<br>
+Simple control for iOS, list of tags.<br><br>
 ![alt tag](https://raw.github.com/maximbilan/ios_tag_list/master/img/img1.png)
-<b>How to use:</b>
-<br>
-Add to your project source files: <br>
+## How to use:
+Add to your project the next source files: <br>
 <pre>
 TagList.h
 TagList.m
@@ -16,7 +13,7 @@ TagView.m
 UIColor+TagColors.h
 UIColor+TagColors.m
 </pre>
-You can add view in the Interface builder and set class to TagList or create in the code: <br>
+You can add view in the Interface builder and set class to <i>TagList</i> or create in the code: <br>
 <pre>
 TagList *tagList = [[TagList alloc] initWithX:50.0 withY:50.0];
 [self.view addSubview:tagList];
@@ -32,7 +29,7 @@ Besides that, if you need to handle tap on tag, you should set selectors. For ex
 [self.tagList setTouchBackgroundSelector:@selector(touchTagOnBackground)];
 </pre>
 
-TouchTagSelector - handle tap on tag event<br>
-TouchBackgroundSelector - handle touches out of the tags event
+<i>TouchTagSelector</i> - handle tap on tag event<br>
+<i>TouchBackgroundSelector</i> - handle touches out of the tags event
 
 More details you can found in the project sample.
