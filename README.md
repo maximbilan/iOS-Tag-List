@@ -20,7 +20,7 @@ TagList *tagList = [[TagList alloc] initWithX:50.0 withY:50.0];
 </pre>
 For filling data in the tag list, you should create array and set it into tag list. For example:
 <pre>
-NSArray *array = [NSArray arrayWithObjects:@"tag 1", @"tag 2", @"tag 3", nil];
+NSArray *array = @[@"tag 1", @"tag 2", @"tag 3"];
 [self.tagList createTags:array];
 </pre>
 Besides that, if you need to handle tap on tag, you should set selectors. For example:
