@@ -13,7 +13,7 @@ TagView.m
 UIColor+TagColors.h
 UIColor+TagColors.m
 </pre>
-You can add view in the Interface builder and set class to <i>TagList</i> or create in the code: <br>
+You can add view in the <i>Interface builder</i> and set class to <i>TagList</i> or create in the code: <br>
 <pre>
 TagList *tagList = [[TagList alloc] initWithX:50.0 withY:50.0];
 [self.view addSubview:tagList];
