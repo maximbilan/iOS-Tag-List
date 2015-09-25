@@ -20,6 +20,7 @@
 		940CE9391894508700E711A7 /* TagList.m in Sources */ = {isa = PBXBuildFile; fileRef = 940CE9341894508700E711A7 /* TagList.m */; };
 		940CE93A1894508700E711A7 /* TagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 940CE9361894508700E711A7 /* TagView.m */; };
 		940CE93B1894508700E711A7 /* UIColor+TagColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 940CE9381894508700E711A7 /* UIColor+TagColors.m */; };
+		947D0FEC1BB5CF5100FF6442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947D0FEB1BB5CF5100FF6442 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		940CE9361894508700E711A7 /* TagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TagView.m; path = Sources/TagView.m; sourceTree = "<group>"; };
 		940CE9371894508700E711A7 /* UIColor+TagColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+TagColors.h"; path = "Sources/UIColor+TagColors.h"; sourceTree = "<group>"; };
 		940CE9381894508700E711A7 /* UIColor+TagColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+TagColors.m"; path = "Sources/UIColor+TagColors.m"; sourceTree = "<group>"; };
+		947D0FEB1BB5CF5100FF6442 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				940CE90A1894502300E711A7 /* AppDelegate.m */,
 				940CE90C1894502300E711A7 /* Main_iPhone.storyboard */,
 				940CE90F1894502300E711A7 /* Main_iPad.storyboard */,
+				947D0FEB1BB5CF5100FF6442 /* LaunchScreen.storyboard */,
 				940CE9121894502300E711A7 /* ViewController.h */,
 				940CE9131894502300E711A7 /* ViewController.m */,
 				940CE9151894502300E711A7 /* Images.xcassets */,
@@ -184,6 +187,7 @@
 				940CE9111894502300E711A7 /* Main_iPad.storyboard in Resources */,
 				940CE9161894502300E711A7 /* Images.xcassets in Resources */,
 				940CE90E1894502300E711A7 /* Main_iPhone.storyboard in Resources */,
+				947D0FEC1BB5CF5100FF6442 /* LaunchScreen.storyboard in Resources */,
 				940CE9051894502300E711A7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
