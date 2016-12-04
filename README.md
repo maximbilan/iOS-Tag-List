@@ -3,7 +3,7 @@ iOS Tag List
 
 Simple control for iOS, list of tags.<br><br>
 ![alt tag](https://raw.github.com/maximbilan/ios_tag_list/master/img/img1.png)
-## How to use:
+## Using:
 Add to your project the next source files: <br>
 <pre>
 TagList.h
