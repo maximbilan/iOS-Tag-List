@@ -1,7 +1,7 @@
 iOS Tag List
 ============
 
-Simple iOS control, list of tags.<br><br>
+A simple iOS control, the list of tags.<br><br>
 ![alt tag](https://raw.github.com/maximbilan/ios_tag_list/master/img/img1.png)
 ## Using:
 Add to your project the next source files: <br>
